@@ -1,2 +1,11 @@
+# Working Notes
 # CentOS KVM headless install 1GB RAM 1 VCPU 8GB HD (CentOS-7-x86_64-Minimal-1511.iso)
 virt-install --connect qemu:///system -n centos7 --ram 1024 --disk /var/lib/libvirt/images/centos7.img,size=8 --vcpus 1 --os-type linux --os-variant Centos7.0 --graphics none --console pty,target_type=serial --location /var/lib/libvirt/images/CentOS-7-x86_64-Minimal-1511.iso --extra-args='console=ttyS0'
+#packages to install
+yum update -y
+yum install epel-release -y
+yum install screen -y
+yum install ansible -y
+yum install git -y
+# yum install python2-pip not be required
+
