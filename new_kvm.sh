@@ -8,7 +8,8 @@ read HOST_NAME
 echo -en "Enter IP Address: "
 read IP_ADDRESS
 sudo sed -i 's/server1/'$HOST_NAME'/g' /var/www/html/kickstart/ks.cfg
-sudo sed -i 's/192.168.122.100/'$IP_ADDRESS'/g' /var/www/html/kickstart/ks.cfg
+#sudo sed -i 's/192.168.122.100/'$IP_ADDRESS'/g' /var/www/html/kickstart/ks.cfg
+sudo sed -i 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/'$IP_ADDRESS'/g' /var/www/html/kickstart/ks.cfg
 
 # Pre-defined variables
 echo ""
