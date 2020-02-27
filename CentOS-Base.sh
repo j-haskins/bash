@@ -16,7 +16,7 @@ sudo yum install -y epel-release
 sudo yum install screen
 
 #mail tools I need
-sudo yum install postfix cyrus-sasl cyrus-sasl-plain cyrus-sasl-md5 cyrus-sasl-gssapi cyrus-sasl-scram
+sudo yum install postfix mailx cyrus-sasl cyrus-sasl-plain cyrus-sasl-md5 cyrus-sasl-gssapi cyrus-sasl-scram
 
 #fail2ban
 sudo yum install fail2ban
@@ -38,7 +38,8 @@ smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt
 relayhost = smtp.gmail.com:587
 postfix reload
 
-vi /etc/aliases # add external mail address
+# add external mail address
+vi /etc/aliases 
 newaliases
 
 
