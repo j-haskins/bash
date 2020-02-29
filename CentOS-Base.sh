@@ -15,16 +15,15 @@ sudo yum install -y epel-release
 #screen
 sudo yum install screen
 
-#mail tools I need
-sudo yum install postfix mailx cyrus-sasl cyrus-sasl-plain cyrus-sasl-md5 cyrus-sasl-gssapi cyrus-sasl-scram
-
 #fail2ban
 sudo yum install fail2ban
+#Configure fail2ban
 
+#mail tools I need
+sudo yum install postfix mailx cyrus-sasl cyrus-sasl-plain cyrus-sasl-md5 cyrus-sasl-gssapi cyrus-sasl-scram
 #postfix config for gmail
 echo "smtp.gmail.com    smtp_user:smtp_passwd" > /etc/postfix/sasl_passwd
 postmap hash:/etc/postfix/sasl_passwd
-
 # append to /etc/postfix/main.cf
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
@@ -37,10 +36,13 @@ smtp_tls_secure_cert_match = nexthop
 smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt
 relayhost = smtp.gmail.com:587
 postfix reload
-
 # add external mail address
 vi /etc/aliases 
 newaliases
+
+#install qemu/kvm 
+
+#test qemu/kvm one-liner
 
 
 
